@@ -151,18 +151,18 @@ void USART2_CheckDmaReception(void)
 
 	static uint16_t old_pos = 0;
 
-	uint16_t pos = DMA_USART2_BUFFER_SIZE - LL_DMA_GetDataLength(DMA1, LL_DMA_CHANNEL_6);
+	uint16_t index = DMA_USART2_BUFFER_SIZE - LL_DMA_GetDataLength(DMA1, LL_DMA_CHANNEL_6);
 
-	if (pos != old_pos) {
-		if (pos > old_pos) {
+	if (index != old_pos) {
+		if (index > old_pos) {
 			uint8_t i = old_pos;
-			while (i < pos) {
+			while (i < index) {
 				USART2_ProcessData(bufferUSART2dma[i]);
 				i++;
 			}
 		}
 	}
-	old_pos = pos;
+	old_pos = index;
 }
 
 
