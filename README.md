@@ -5,6 +5,6 @@
 
 
 <p align="center">
-    <img src="https://github.com/VRS-Predmet/vrs_cvicenie_7/blob/master/images/nastavenie_makra.PNG" width="750">
+    <img src="https://user-images.githubusercontent.com/91337423/145203961-0237b693-6118-4fbf-b296-2ecf1a713152.mp4" width="750">
 </p>
 
