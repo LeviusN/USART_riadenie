@@ -168,17 +168,17 @@ void SystemClock_Config(void)
 void proccesDmaData(uint8_t element) {
 	static uint8_t dollar; static uint8_t index; static char dmaDATA[36];
 //kontrola
+	if (element == '$') {//pocitanie zaciatku a konca
+		dollar++;
+	}else if (dollar == 0) {
+			return;
+		}
 	dmaDATA[index] = element;
 	index++;
 	if (index == 36) {
 		dollar = 0;
 		index = 0;
 	}
-	if (element == '$') {//pocitanie zaciatku a konca
-		dollar++;
-	}else if (dollar == 0) {
-			return;
-		}
 
 //zaciatok spracovavacieho kodu
 	if ((element == '$') && (dollar == 2)) {//ak dva dolare potom pokracovat
@@ -194,15 +194,15 @@ void proccesDmaData(uint8_t element) {
 		uint8_t dimension;
 //data
 		while(i < length-1){//spracovanie stavu manual a auto
-			i++;
 			fillis[i-1] = data[i];
 			fillis[length-2] = 0;
+			i++;
 		}
 		i = 0;
 		while(i < length-3){//spracovanie stavu PWM bez cisla
-			i++;
 			stringPWM[i] = fillis[i];
 			stringPWM[3] = 0;
+			i++;
 		}
 //urcenie modu
 		state=(!strcmp(fillis, manual))*1;//ci sa jedna o manual
