@@ -5,7 +5,5 @@
 - GPIOA-5 (pin A4 na doske)
 
 # Video (treba dva krat kliknut na tu malu ikonu)
-<p align="center">
-    <img src="https://github.com/LeviusN/vrs_10_nove/issues/2#issue-1074329898" >
-</p>
+
 
